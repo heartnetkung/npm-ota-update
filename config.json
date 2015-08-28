@@ -1,0 +1,5 @@
+{
+  "package_url" : "https://api.github.com/repos/heartnetkung/npm-ota-update-test/contents/package.json?ref=master",
+  "npm_install_url" : "heartnetkung/npm-ota-update-test",
+  "main":"app.js"
+}
