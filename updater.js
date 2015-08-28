@@ -71,7 +71,7 @@ var npmInstall = function(newVersion, token, npmInstallUrl, callback) {
 
 
 var updateShell = function(newVersion, newRunPath, callback) {
-	var firstLine = ' rm -rf ';
+	var firstLine = 'rm -rf ';
 	var secondLine = 'node updater ' + newVersion + ' &';
 	var thirdLine = 'node ' + __dirname + '/' + newRunPath + '/app.js';
 	var fileList = [];
@@ -93,8 +93,12 @@ var updateShell = function(newVersion, newRunPath, callback) {
 			} else {
 				firstLine = '';
 			}
-			fs.writeFile(__dirname + '/run.sh', firstLine + '\n' + secondLine + '\n' +
-				thirdLine, callback);
+			var script =
+				'if [ "$1" = "reset" ]\nthen\n\trm -rf v-*\n\tnode updater 0\nelse\n\t<code>\nfi',
+				code = [firstLine, secondLine, thirdLine].join('\n\t');
+
+			fs.writeFile(__dirname + '/run.sh', script.replace('<code>', code),
+				callback);
 		});
 	});
 };

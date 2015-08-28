@@ -1,3 +1,7 @@
- rm -rf /home/heartnetkung/Desktop/yolo/v-1.0.2
-node updater 1.0.3 &
-node /home/heartnetkung/Desktop/yolo/v-1.0.3/node_modules/queuemate/app.js
+if [ "$1" = "reset" ]
+then
+	rm -rf v-*
+	node updater 0
+else
+	node updater 0
+fi
