@@ -10,6 +10,7 @@ sudo npm install
 2) Inspect `config.json` file and change it to match your settings. If you are not sure, you can skip to step 3. The given settings will install a dummy repo. To get your token follow this [tutorial.](https://help.github.com/articles/creating-an-access-token-for-command-line-use/)
 ``` js
 {
+	/*token is for private repo only*/
     "token":"<TOKEN>", 
     "package_url":"https://api.github.com/repos/<github-user>/<github-repo>/contents/package.json?ref=master",
     /*for private repo*/
@@ -23,7 +24,7 @@ sudo npm install
 ```
 ./run.sh
 ```
-At this step, your code will be downloaded from github and run in this machine. Later on you can run this script instead of your program and it will automatically update your software in background for you everytime the program starts. The next version will be applied next time your pragram start.
+At this step, your code will be downloaded from github. Later on you can run this script again instead of your program and it will automatically update your software in background for you everytime the program starts. The next version will be applied before the next time your pragram start.
 
 ## What's Next
 1) Update config.json together with the program (useful when you rename your repo)
