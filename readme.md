@@ -8,13 +8,13 @@ git clone https://github.com/heartnetkung/npm-ota-update.git
 sudo npm install
 ```
 2) Inspect `config.json` file and change it to match your settings. If you are not sure, you can skip to step 3. The given settings will install a dummy repo. To get your token follow this [tutorial.](https://help.github.com/articles/creating-an-access-token-for-command-line-use/)
-``` json
+``` js
 {
     "token":"<TOKEN>", 
     "package_url":"https://api.github.com/repos/<github-user>/<github-repo>/contents/package.json?ref=master",
-    // for private repo
+    /*for private repo*/
     "npm_install_url":"git+https://<token>:x-oauth-basic@github.com/<github-user>/<github-repo>.git",
-    // for public repo
+    /*for public repo*/
     "npm_install_url":"<github-user>/<github-repo>",
     "main":"app.js"
 }
@@ -27,7 +27,7 @@ At this step, your code will be downloaded from github and run in this machine. 
 
 ## What's Next
 1) Update config.json together with the program (useful when you rename your repo)
-``` json
+``` js
 // package.json in your github repo
 {
   "name": "your-awesome-node-module",
@@ -36,7 +36,7 @@ At this step, your code will be downloaded from github and run in this machine. 
   "hnk_updater": {
     "token": "<TOKEN>",
     "main":"app.js"
-    //anything here will replace config.json
+    /*anything here will replace config.json*/
   }
 }
 ```
