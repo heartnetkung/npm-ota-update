@@ -3,5 +3,5 @@ then
 	rm -rf v-*
 	node updater 0
 else
-	node updater 0
+	node updater 0 &
 fi
