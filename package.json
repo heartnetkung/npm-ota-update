@@ -1,0 +1,12 @@
+{
+	"name": "npm-ota-updater",
+	"author": "heartnetkung <heartnetkung@gmail.com>",
+	"version": "0.0.1",
+	"dependencies": {
+		"curlrequest": ">= 0.5.3",
+		"npm": ">= 2.14.0",
+		"async": ">= 1.4.2",
+		"underscore": ">= 1.8.3"
+	}
+
+}
