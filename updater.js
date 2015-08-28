@@ -58,7 +58,7 @@ var npmInstall = function(newVersion, token, npmInstallUrl, callback) {
 					installInfo) {
 					if (err) cb(err);
 					else
-						cb(null, installInfo && installInfo[0]);
+						cb(null, installInfo && installInfo[installInfo.length-1]);
 				});
 			});
 		}
